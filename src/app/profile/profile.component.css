@@ -1,0 +1,15 @@
+.textMargin{
+    margin-top: 80px;
+    
+}
+.tab{
+    float: right;
+}
+
+.tabColor{
+    background-color: #091C5A;
+}
+
+.tabColor .btn:hover,.tabColor .btn:focus{
+    background-color: #091C5A;
+}

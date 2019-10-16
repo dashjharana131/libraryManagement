@@ -1,0 +1,24 @@
+.navColor{
+    background-color: #FF6600;
+    margin-top: -10px;
+}
+
+.tabColor{
+    background-color: #091C5A;
+}
+
+.tabColor .btn:hover,.tabColor .btn:focus{
+    background-color: #091C5A;
+}
+
+.navHeader{
+    font-size: 30px;
+    text-align: left;
+}
+
+.navLog{
+    text-decoration-color: #fff;
+}
+.btn{
+    background-color: #091C5A;
+}
