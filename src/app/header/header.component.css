@@ -1,6 +1,7 @@
 .navColor{
     background-color: #FF6600;
     margin-top: -10px;
+    height: 12vh;
 }
 
 .tabColor{
@@ -21,4 +22,23 @@
 }
 .btn{
     background-color: #091C5A;
+}
+.tab{
+    float: right;
+}
+.textNav{
+    text-align: center;
+    margin-top: 1rem !important;
+    font-size: 25px;
+    color: white;
+    text-align: left;
+}
+.imgLogo{
+    position: relative;
+    width: 100px;
+    height: 60px;
+    padding-bottom: 0px;
+    padding-top: 10px;
+    margin-right: 0px;
+    
 }

@@ -23,7 +23,7 @@ import { TableModule } from 'primeng/table';
 import { CalendarModule } from 'primeng/calendar';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
-import { MaincontainerComponent } from './maincontainer/maincontainer.component';
+
 
 @NgModule({
   declarations: [
@@ -32,8 +32,7 @@ import { MaincontainerComponent } from './maincontainer/maincontainer.component'
     LoginComponent,
     HeaderComponent,
     ProfileComponent,
-    UserComponent,
-    MaincontainerComponent
+    UserComponent
   ],
   imports: [
     BrowserModule,

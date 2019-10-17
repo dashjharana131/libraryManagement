@@ -10,7 +10,6 @@ export class HeaderComponent implements OnInit {
   currURL: string = '';
   constructor(private router: Router) {
     this.currURL = this.router.url;
-    debugger;
   }
 
   ngOnInit() {
