@@ -1,9 +1,42 @@
 <app-header></app-header>
 <div class="row">
-    <app-profile></app-profile>
-    <div class="col-sm-8">
+    <div class="col-sm-12 headerTab">
         <p-tabView>
-
+            <p-tabPanel header="Add Book" class="tabColor" leftIcon="pi pi-calendar">
+                <p-scrollPanel [style]="{width: '80%', height: '350px'}" styleClass="custombar1">
+                    <div style="padding:1em;line-height:1.5"></div>
+                    <form>
+                        <label>User Id:{{userId}}</label>
+                        <br>
+                        <br>
+                        <label>ISBN:</label>
+                        <input id="input" type="text" size="30" pInputText [(ngModel)]="IAdd.isbn" name="isbn">
+                        <br>
+                        <br>
+                        <label>Book Title:</label>
+                        <input id="input" type="text" size="30" pInputText [(ngModel)]="IAdd.bookTitle"
+                            name="bookTitle">
+                        <br>
+                        <br>
+                        <label>Category:</label>
+                        <input id="input" type="text" size="30" pInputText [(ngModel)]="IAdd.category" name="category">
+                        <br>
+                        <br>
+                        <label>Author:</label>
+                        <input id="input" type="text" size="30" pInputText [(ngModel)]="IAdd.author" name="author">
+                        <br>
+                        <br>
+                        <p-button label="Add Book" class="tabColor " (click)="addbook(IAdd)"></p-button>
+                        {{clickMessage}}
+                        <br>
+                    </form>
+                </p-scrollPanel>
+            </p-tabPanel>
+            <p-tabPanel header="Search Book" class="tabColor" leftIcon="pi pi-calendar">
+                <p-scrollPanel [style]="{width: '80%', height: '350px'}" styleClass="custombar1">
+                    <app-search></app-search>
+                </p-scrollPanel>
+            </p-tabPanel>
 
         </p-tabView>
     </div>

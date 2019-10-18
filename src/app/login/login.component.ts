@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   password: String;
   userId: number;
 
-  baseUrlLogin: string = 'http://10.117.189.122:9090';
+  baseUrlLogin: string = 'http://10.117.189.65:9292';
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -49,18 +49,13 @@ export class LoginComponent implements OnInit {
       "email": this.loginForm.value.email,
       "password": this.loginForm.value.password
     };
-    this.http.post('http://10.117.189.122:9090/LibraryManagementSystem/lms/login', this.loginForm.value).subscribe((res: any) => {
-      console.log(res.statusCode, res.message);
+    this.http.post('http://10.117.189.65:9292/LibraryManagementSystem/lms/login', this.loginForm.value).subscribe((res: any) => {
       if (res.statusCode == 201) {
         alert('Success');
 
       }
       sessionStorage.setItem("userId", res['userId']);
-      console.log(localStorage.setItem("userId", res['userId']));
-      console.log(localStorage.getItem("userId"));
-      console.log(localStorage.setItem("email", res['email']));
-      console.log(localStorage.getItem("email"));
-      this.router.navigate(['/user']);
+      this.router.navigate(['/user/books']);
     }, (err) => {
       this.err = true;
       console.log("rerror", err)

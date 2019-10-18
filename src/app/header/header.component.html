@@ -1,11 +1,12 @@
 <!-- navbar -->
 <nav class="navbar navbar-expand-md navbar-light navColor fixed-top">
-    <a class="navbar-brand imgLogo"><img src="../../assets/images/white-label.png"></a>
-    <div class="textNav" id="nav">
+    <div class="col-lg-2">
+        <a class="navbar-brand imgLogo"><img src="../../assets/images/white-label.png"></a>
+    </div>
+    <div class="col-lg-8 textNav" id="nav">
         Library Management System
-        <div *ngIf="currURL != '/login' && currURL != '/register'" class="col-sm-8 ">
-            <button type="button" (click)="userLogout()" class="btn btn-link tabColor tab">Logout</button>
-        </div>
-
+    </div>
+    <div class="col-lg-2" *ngIf="currURL != '/login' && currURL != '/register'">
+        <button type="button" (click)="userLogout()" class="btn btn-link tabColor tab">Logout</button>
     </div>
 </nav>

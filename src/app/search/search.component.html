@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            Search Books : <input [(ngModel)]="searchText" type="text" placeholder="Search for Books"
+                (keyup)="getBookList()">
+        </div>
+    </div>
+</div>
+<table class="table" *ngIf="books">
+    <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Book Id</th>
+            <th>Book Title</th>
+            <th>Category</th>
+            <th>Author</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td> {{book.authorName}}</td>
+            <td> {{book.bookId}}</td>
+            <td> {{book.bookName}}</td>
+            <td> {{book.genre}}</td>
+            <td> {{book.rating}}</td>
+            <td>{{book.status}}</td>
+            <td>
+                <a *ngIf="book.bookStatus == 'available'" routerLinkActive="active" routerLink="/borrow"
+                    (click)="bookID(book.bookId)"> Borrow</a>
+                <a *ngIf="book.status != 'available'" routerLinkActive="active" routerLink="/request"
+                    (click)="bookID(book.bookId)"> Request</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

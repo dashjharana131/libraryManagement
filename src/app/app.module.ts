@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { LoginComponent } from './login/login.component';
@@ -13,7 +13,9 @@ import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
+
 import { UserService } from './services/user.service';
+import { BookserviceService } from './services/bookservice.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DropdownModule } from 'primeng/dropdown';
@@ -23,6 +25,9 @@ import { TableModule } from 'primeng/table';
 import { CalendarModule } from 'primeng/calendar';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { InputTextModule } from 'primeng/inputtext';
+import { SearchComponent } from './search/search.component';
+
 
 
 @NgModule({
@@ -32,11 +37,13 @@ import { ToastModule } from 'primeng/toast';
     LoginComponent,
     HeaderComponent,
     ProfileComponent,
-    UserComponent
+    UserComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -46,9 +53,10 @@ import { ToastModule } from 'primeng/toast';
     TableModule,
     CalendarModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    InputTextModule
   ],
-  providers: [UserService],
+  providers: [UserService, BookserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

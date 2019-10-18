@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  userId: string = '';
 
   constructor() { }
 
   ngOnInit() {
+    this.userId = sessionStorage.getItem("userId");
   }
 
 }

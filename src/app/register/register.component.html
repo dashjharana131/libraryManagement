@@ -1,8 +1,6 @@
 <div class="row">
     <div class="col-sm-6 offset-sm-3 textMargin">
         <app-header></app-header>
-
-
         <h2>Register</h2>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
@@ -11,7 +9,6 @@
                     [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
                 <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                     <div *ngIf="f.firstName.errors.required">First Name is required</div>
-                    <div *ngIf="f.firstName.errors.pattern">Password must contain at least 1 uppercase</div>
                 </div>
             </div>
             <div class="form-group">
@@ -44,13 +41,12 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="mobilenumber">Mobile Number</label>
-                <input type="number" formControlName="mobilenumber" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.mobilenumber.errors }" maxlength="10" />
-                <div *ngIf="submitted && f.mobilenumber.errors" class="invalid-feedback">
-                    <div *ngIf="f.mobilenumber.errors.required">Mobile Number is required</div>
-                    <div *ngIf="f.mobilenumber.errors.minlength">Mobile Number should be 10 digits</div>
-                    <div *ngIf="f.mobilenumber.errors.pattern">Mobile Number should be in 10 digits</div>
+                <label for="mobileNumber">Mobile Number</label>
+                <input type="number" formControlName="mobileNumber" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }" maxlength="10" />
+                <div *ngIf="submitted && f.mobileNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.mobileNumber.errors.required">Mobile Number is required</div>
+
                 </div>
             </div>
             <div class="form-group">

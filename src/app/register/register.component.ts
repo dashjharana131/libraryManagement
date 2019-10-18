@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -26,14 +26,13 @@ export class RegisterComponent implements OnInit {
   password: string;
   mobileNumber: string;
 
-  baseUrl: string = 'http://10.117.189.122:9090';
+  baseUrl: string = 'http://10.117.189.65:9292';
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required, Validators.pattern('(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])')],
+      firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      username: ['', Validators.required],
-      mobileNumber: ['', Validators.required, Validators.minLength(10)],
+      mobileNumber: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{8,}')]]
     });
@@ -60,7 +59,7 @@ export class RegisterComponent implements OnInit {
       "password": this.registerForm.value.password,
       "mobileNumber": this.registerForm.value.mobileNumber,
     };
-    this.http.post('http://10.117.189.122:9090/LibraryManagementSystem/lms/user', reqObj).subscribe((response: any) => {
+    this.http.post('http://10.117.189.65:9292/LibraryManagementSystem/lms/user', reqObj).subscribe((response: any) => {
       /*this.userService.userRegister(this.registerForm.value).subscribe(data => {
         console.log(data);
       })*/
@@ -77,8 +76,6 @@ export class RegisterComponent implements OnInit {
         this.mobileNumber = this.data.mobileNumber;
         this.router.navigate(['/login']);
       }
-    }, (err) => {
-      console.log("rerror", err)
     });
 
   }
